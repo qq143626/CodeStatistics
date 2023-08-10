@@ -1,0 +1,81 @@
+﻿<UserControl x:Class="CodeStatistics.Views.FileTypeView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:prism="http://prismlibrary.com/"
+             xmlns:i="http://schemas.microsoft.com/xaml/behaviors"
+             xmlns:hc="https://handyorg.github.io/handycontrol"
+             prism:ViewModelLocator.AutoWireViewModel="True">
+    <StackPanel Margin="10">
+        <TextBlock Text="{DynamicResource AddFileType}"
+                   Margin="0,10,0,0"
+                   Style="{StaticResource TextBlockTitle}"/>
+        <ComboBox Width="300" Margin="0,10,0,0"
+                  ItemsSource="{Binding CodeTypeDatas}"
+                  x:Name="CodeType"
+                  hc:InfoElement.TitleWidth="100"
+                  hc:InfoElement.TitlePlacement="Left"
+                  hc:InfoElement.Title="{DynamicResource ChooseFileType}"
+                  Style="{StaticResource ComboBoxExtend}">
+            <i:Interaction.Triggers>
+                <i:EventTrigger EventName="SelectionChanged">
+                    <i:InvokeCommandAction Command="{Binding SelectedItemChangedCommand}"
+                                           CommandParameter="{Binding SelectedIndex, ElementName=CodeType}" />
+                </i:EventTrigger>
+            </i:Interaction.Triggers>
+        </ComboBox>
+        <TextBox Width="300" Margin="0,10,0,0"
+                 Text="{Binding CodeType}"
+                 hc:InfoElement.TitleWidth="100"
+                 hc:InfoElement.TitlePlacement="Left"
+                 hc:InfoElement.Title="{DynamicResource CodeType}"
+                 hc:InfoElement.Placeholder="{DynamicResource CodeTypeTip}"
+                 Style="{StaticResource TextBoxExtend}"/>
+        <TextBox Width="300" Margin="0,10,0,0"
+                 Text="{Binding Extension}"
+                 hc:InfoElement.TitleWidth="100"
+                 hc:InfoElement.TitlePlacement="Left"
+                 hc:InfoElement.Title="{DynamicResource Extension}"
+                 hc:InfoElement.Placeholder="{DynamicResource ExtensionTip}"
+                 Style="{StaticResource TextBoxExtend}"/>
+        <TextBox Width="300" Margin="0,10,0,0"
+                 Text="{Binding SingleComments}"
+                 hc:InfoElement.TitleWidth="100"
+                 hc:InfoElement.TitlePlacement="Left"
+                 hc:InfoElement.Title="{DynamicResource SingleComments}"
+                 Style="{StaticResource TextBoxExtend}"/>
+        <TextBox Width="300" Margin="0,10,0,0"
+                 Text="{Binding MultiCommentsStart}"
+                 hc:InfoElement.TitleWidth="100"
+                 hc:InfoElement.TitlePlacement="Left"
+                 hc:InfoElement.Title="{DynamicResource MultiCommentsStart}"
+                 Style="{StaticResource TextBoxExtend}"/>
+        <TextBox Width="300" Margin="0,10,0,0"
+                 Text="{Binding MultiCommentsEnd}"
+                 hc:InfoElement.TitleWidth="100"
+                 hc:InfoElement.TitlePlacement="Left"
+                 hc:InfoElement.Title="{DynamicResource MultiCommentsEnd}"
+                 Style="{StaticResource TextBoxExtend}"/>
+        <StackPanel Orientation="Horizontal" 
+                    Margin="0,10,0,0"
+                    HorizontalAlignment="Center">
+            <Button Content="{DynamicResource Cancel}"
+                    Width="100" Margin="10"
+                    Style="{StaticResource ButtonDanger}">
+                <i:Interaction.Triggers>
+                    <i:EventTrigger EventName="Click">
+                        <i:InvokeCommandAction Command="{Binding CancelFileTypeCommand}" />
+                    </i:EventTrigger>
+                </i:Interaction.Triggers>
+            </Button>
+            <Button Content="{DynamicResource Submit}"
+                    Width="100" Margin="10"
+                    Style="{DynamicResource ButtonPrimary}">
+                <i:Interaction.Triggers>
+                    <i:EventTrigger EventName="Click">
+                        <i:InvokeCommandAction Command="{Binding SubmitFileTypeCommand}" />
+                    </i:EventTrigger>
+                </i:Interaction.Triggers>
+            </Button>
+        </StackPanel>
+    </StackPanel>
+</UserControl>

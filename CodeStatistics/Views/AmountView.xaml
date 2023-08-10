@@ -1,0 +1,58 @@
+﻿<UserControl x:Class="CodeStatistics.Views.AmountView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:prism="http://prismlibrary.com/"
+             xmlns:hc="https://handyorg.github.io/handycontrol"
+             prism:ViewModelLocator.AutoWireViewModel="True">
+    <StackPanel>
+        <TextBox Width="300" Margin="0,10,0,0"
+                 Text="{Binding AmountStatistics.FileCount, Mode=OneWay}"
+                 IsEnabled="False"
+                 hc:InfoElement.TitleWidth="100"
+                 hc:InfoElement.TitlePlacement="Left"
+                 hc:InfoElement.Title="{DynamicResource FileCount}"
+                 Style="{StaticResource TextBoxExtend}"/>
+        <TextBox Width="300" Margin="0,10,0,0"
+                 Text="{Binding AmountStatistics.FileSizeStr, Mode=OneWay}"
+                 IsEnabled="False"
+                 hc:InfoElement.TitleWidth="100"
+                 hc:InfoElement.TitlePlacement="Left"
+                 hc:InfoElement.Title="{DynamicResource FileSize}"
+                 Style="{StaticResource TextBoxExtend}"/>
+        <TextBox Width="300" Margin="0,10,0,0"
+                 Text="{Binding AmountStatistics.TotalLine, Mode=OneWay}"
+                 IsEnabled="False"
+                 hc:InfoElement.TitleWidth="100"
+                 hc:InfoElement.TitlePlacement="Left"
+                 hc:InfoElement.Title="{DynamicResource TotalLine}"
+                 Style="{StaticResource TextBoxExtend}"/>
+        <TextBox Width="300" Margin="0,10,0,0"
+                 Text="{Binding AmountStatistics.CodeLine, Mode=OneWay}"
+                 IsEnabled="False"
+                 hc:InfoElement.TitleWidth="100"
+                 hc:InfoElement.TitlePlacement="Left"
+                 hc:InfoElement.Title="{DynamicResource CodeLine}"
+                 Style="{StaticResource TextBoxExtend}"/>
+        <TextBox Width="300" Margin="0,10,0,0"
+                 Text="{Binding AmountStatistics.CommentLine, Mode=OneWay}"
+                 IsEnabled="False"
+                 hc:InfoElement.TitleWidth="100"
+                 hc:InfoElement.TitlePlacement="Left"
+                 hc:InfoElement.Title="{DynamicResource CommentLine}"
+                 Style="{StaticResource TextBoxExtend}"/>
+        <TextBox Width="300" Margin="0,10,0,0"
+                 Text="{Binding AmountStatistics.BlankLine, Mode=OneWay}"
+                 IsEnabled="False"
+                 hc:InfoElement.TitleWidth="100"
+                 hc:InfoElement.TitlePlacement="Left"
+                 hc:InfoElement.Title="{DynamicResource BlankLine}"
+                 Style="{StaticResource TextBoxExtend}"/>
+        <TextBox Width="300" Margin="0,10,0,0"
+                 Text="{Binding AmountStatistics.TimeConsumingStr, Mode=OneWay}"
+                 IsEnabled="False"
+                 hc:InfoElement.TitleWidth="100"
+                 hc:InfoElement.TitlePlacement="Left"
+                 hc:InfoElement.Title="{DynamicResource TimeConsuming}"
+                 Style="{StaticResource TextBoxExtend}"/>
+    </StackPanel>
+</UserControl>

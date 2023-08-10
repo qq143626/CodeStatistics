@@ -1,0 +1,54 @@
+﻿<UserControl x:Class="CodeStatistics.Views.DetailsView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:prism="http://prismlibrary.com/"
+             prism:ViewModelLocator.AutoWireViewModel="True">
+    <!--<ListView ItemsSource="{Binding FileStatisticDatas}" x:Name="listView">
+        <ListView.Background>
+            <VisualBrush>
+                <VisualBrush.Visual>
+                    <TextBlock Text="{DynamicResource NoData}" 
+                               Visibility="{Binding ElementName=listView, Path=Items.Count, Converter={StaticResource Int2VisibilityConverter}}" />
+                </VisualBrush.Visual>
+                <VisualBrush.RelativeTransform>
+                    <TransformGroup>
+                        <ScaleTransform ScaleX=".2" ScaleY=".1" CenterX=".5" CenterY=".5" />
+                    </TransformGroup>
+                </VisualBrush.RelativeTransform>
+            </VisualBrush>
+        </ListView.Background>
+        <ListView.View>
+            <GridView>
+                <GridViewColumn Header="{DynamicResource FileName}" DisplayMemberBinding="{Binding FileName}" />
+                <GridViewColumn Header="{DynamicResource FileType}" DisplayMemberBinding="{Binding FileType}" />
+                <GridViewColumn Header="{DynamicResource FileDirectory}" DisplayMemberBinding="{Binding FileDirectory}" />
+                <GridViewColumn Header="{DynamicResource Keyword}" DisplayMemberBinding="{Binding Keyword}" />
+                <GridViewColumn Header="{DynamicResource FileSize}" DisplayMemberBinding="{Binding FileSize}" />
+                <GridViewColumn Header="{DynamicResource TotalLine}" DisplayMemberBinding="{Binding TotalLine}" />
+                <GridViewColumn Header="{DynamicResource CodeLine}" DisplayMemberBinding="{Binding CodeLine}" />
+                <GridViewColumn Header="{DynamicResource CommentLine}" DisplayMemberBinding="{Binding CommentLine}" />
+                <GridViewColumn Header="{DynamicResource BlankLine}" DisplayMemberBinding="{Binding BlankLine}" />
+            </GridView>
+        </ListView.View>
+    </ListView>-->
+
+    <DataGrid ItemsSource="{Binding FileStatisticDatas}"
+              IsReadOnly="True" 
+              GridLinesVisibility="All"
+              VerticalGridLinesBrush="{StaticResource BackgroundBrush}"
+              HorizontalGridLinesBrush="{StaticResource BackgroundBrush}"
+              HorizontalScrollBarVisibility="Auto" Background="{StaticResource RegionBrush}"
+              AutoGenerateColumns="False">
+        <DataGrid.Columns>
+            <DataGridTextColumn Header="{DynamicResource FileName}" Binding="{Binding FileName}" />
+            <DataGridTextColumn Header="{DynamicResource FileType}" Binding="{Binding FileType}" />
+            <DataGridTextColumn Header="{DynamicResource FileDirectory}" Binding="{Binding FileDirectory}" />
+            <DataGridTextColumn Header="{DynamicResource Keyword}" Binding="{Binding Keyword}" />
+            <DataGridTextColumn Header="{DynamicResource FileSize}" Binding="{Binding FileSize}" />
+            <DataGridTextColumn Header="{DynamicResource TotalLine}" Binding="{Binding TotalLine}" />
+            <DataGridTextColumn Header="{DynamicResource CodeLine}" Binding="{Binding CodeLine}" />
+            <DataGridTextColumn Header="{DynamicResource CommentLine}" Binding="{Binding CommentLine}" />
+            <DataGridTextColumn Header="{DynamicResource BlankLine}" Binding="{Binding BlankLine}" />
+        </DataGrid.Columns>
+    </DataGrid>
+</UserControl>

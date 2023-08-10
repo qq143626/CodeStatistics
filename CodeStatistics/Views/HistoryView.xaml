@@ -1,0 +1,53 @@
+﻿<UserControl x:Class="CodeStatistics.Views.HistoryView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:prism="http://prismlibrary.com/"
+             prism:ViewModelLocator.AutoWireViewModel="True">
+    <!--<ListView ItemsSource="{Binding HistoryStatisticsDatas}" x:Name="listView">
+        <ListView.Background>
+            <VisualBrush>
+                <VisualBrush.Visual>
+                    <TextBlock Text="{DynamicResource NoData}" Visibility="{Binding Path=Items.Count, ElementName=listView, Converter={StaticResource Int2VisibilityConverter}}" />
+                </VisualBrush.Visual>
+                <VisualBrush.RelativeTransform>
+                    <TransformGroup>
+                        <ScaleTransform ScaleX=".2" ScaleY=".1" CenterX=".5" CenterY=".5" />
+                    </TransformGroup>
+                </VisualBrush.RelativeTransform>
+            </VisualBrush>
+        </ListView.Background>
+        <ListView.View>
+            <GridView>
+                <GridViewColumn Header="{DynamicResource StatisticDate}" DisplayMemberBinding="{Binding AmountStatistics.StatisticDate}" />
+                <GridViewColumn Header="{DynamicResource FileDirectory}" DisplayMemberBinding="{Binding AmountStatistics.FileDirectory}" />
+                <GridViewColumn Header="{DynamicResource FileType}" DisplayMemberBinding="{Binding AmountStatistics.FileType}" />
+                <GridViewColumn Header="{DynamicResource FileCount}" DisplayMemberBinding="{Binding AmountStatistics.FileCount}" />
+                <GridViewColumn Header="{DynamicResource FileSize}" DisplayMemberBinding="{Binding AmountStatistics.FileSize}" />
+                <GridViewColumn Header="{DynamicResource TotalLine}" DisplayMemberBinding="{Binding AmountStatistics.TotalLine}" />
+                <GridViewColumn Header="{DynamicResource CodeLine}" DisplayMemberBinding="{Binding AmountStatistics.CodeLine}" />
+                <GridViewColumn Header="{DynamicResource CommentLine}" DisplayMemberBinding="{Binding AmountStatistics.CommentLine}" />
+                <GridViewColumn Header="{DynamicResource BlankLine}" DisplayMemberBinding="{Binding AmountStatistics.BlankLine}" />
+            </GridView>
+        </ListView.View>
+    </ListView>-->
+
+    <DataGrid ItemsSource="{Binding HistoryStatisticsDatas}"
+              IsReadOnly="True" 
+              GridLinesVisibility="All"
+              VerticalGridLinesBrush="{StaticResource BackgroundBrush}"
+              HorizontalGridLinesBrush="{StaticResource BackgroundBrush}"
+              HorizontalScrollBarVisibility="Auto" Background="{StaticResource RegionBrush}"
+              AutoGenerateColumns="False">
+        <DataGrid.Columns>
+            <DataGridTextColumn Header="{DynamicResource StatisticDate}" Binding="{Binding AmountStatistics.StatisticDate}" />
+            <DataGridTextColumn Header="{DynamicResource FileDirectory}" Binding="{Binding AmountStatistics.FileDirectory}" />
+            <DataGridTextColumn Header="{DynamicResource FileType}" Binding="{Binding AmountStatistics.FileType}" />
+            <DataGridTextColumn Header="{DynamicResource FileCount}" Binding="{Binding AmountStatistics.FileCount}" />
+            <DataGridTextColumn Header="{DynamicResource FileSize}" Binding="{Binding AmountStatistics.FileSizeStr}" />
+            <DataGridTextColumn Header="{DynamicResource TotalLine}" Binding="{Binding AmountStatistics.TotalLine}" />
+            <DataGridTextColumn Header="{DynamicResource CodeLine}" Binding="{Binding AmountStatistics.CodeLine}" />
+            <DataGridTextColumn Header="{DynamicResource CommentLine}" Binding="{Binding AmountStatistics.CommentLine}" />
+            <DataGridTextColumn Header="{DynamicResource BlankLine}" Binding="{Binding AmountStatistics.BlankLine}" />
+        </DataGrid.Columns>
+    </DataGrid>
+</UserControl>
